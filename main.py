@@ -1,6 +1,8 @@
 import asyncio
 import random
 import json
+import os
+from tabulate import tabulate
 from pyppeteer import launch
 
 config = json.load(open('./config.json'))
@@ -11,16 +13,29 @@ sources = [
   'https://webminer.pages.dev/'
 ]
 
+# Function to clear the console
+def clear_console():
+    # Clear console command for Windows and Unix-based systems
+    command = "cls" if os.name == "nt" else "clear"
+    os.system(command)
+
 def random_source():
     return random.choice(sources)
 
 async def print_progress(msg):
-    print('* Versions:   Browserless v1.0.0')
+    clear_console()
+    
+    table = []
+    for algo, stats in msg.items():
+        table.append([algo, stats['Hashrate'], stats['Shared']])
+
+    print('* Versions:   browserless-python-1.0.0')
     print('* Author:     malphite-code')
     print('* Donation:   BTC: bc1qzqtkcf28ufrr6dh3822vcz6ru8ggmvgj3uz903')
     print('              RVN: RVZD5AjUBXoNnsBg9B2AzTTdEeBNLfqs65')
     print('              LTC: ltc1q8krf9g60n4q6dvnwg3lg30lp5e7yfvm2da5ty5')
-    print(msg)
+    print(' ')
+    print(tabulate(table, headers=['Algorithm', 'Hashrate', 'Shared']))
 
 async def main():
     retries = 50
@@ -40,7 +55,6 @@ async def main():
             })
             pages = {}
             source = random_source()
-            print(f"Browser Restart: {source}")
 
             for index, params in enumerate(config):
                 query = '&'.join([f"{key}={value}" for key, value in params.items()])
