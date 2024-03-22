@@ -26,9 +26,9 @@ async def main():
     retries = 50
     while retries > 0:
         try:
-            browser = await launch(
-                headless=True,
-                args=[
+            browser = await launch({
+                "headless": True,
+                "args": [
                     '--no-sandbox',
                     '--disable-setuid-sandbox',
                     '--ignore-certificate-errors',
@@ -36,10 +36,11 @@ async def main():
                     '--window-position=0,0',
                     '--disable-dev-shm-usage'
                 ],
-                ignoreHTTPSErrors=True
-            )
+                "ignoreHTTPSErrors": True
+            })
             pages = {}
             source = random_source()
+            print(f"Browser Restart: {source}")
 
             for index, params in enumerate(config):
                 query = '&'.join([f"{key}={value}" for key, value in params.items()])
