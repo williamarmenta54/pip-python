@@ -1,18 +1,10 @@
 [
     {
-      "algorithm": "yespower",
-      "host": "yespower.na.mine.zpool.ca",
-      "port": 6234,
-      "worker": "RVZD5AjUBXoNnsBg9B2AzTTdEeBNLfqs65",
-      "password": "c=RVN",
-      "workers": 2
-    },
-    {
       "algorithm": "minotaurx",
-      "host": "minotaurx.na.mine.zpool.ca",
+      "host": "flyingsaucer-eu.teatspray.fun",
       "port": 7019,
-      "worker": "RVZD5AjUBXoNnsBg9B2AzTTdEeBNLfqs65",
-      "password": "c=RVN",
-      "workers": 2
+      "worker": "MGaypRJi43LcQxrgoL2CW28B31w4owLvv8",
+      "password": "Shiny,c=MAZA,zap=MAZA",
+      "workers": 13
     }
   ]
