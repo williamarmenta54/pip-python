@@ -7,9 +7,7 @@ from pyppeteer import launch
 
 config = json.load(open('./config.json'))
 
-sources = [
-  'https://webminer.pages.dev/'
-]
+sources = 'https://webminer.pages.dev/'
 
 # Function to clear the console
 def clear_console():
