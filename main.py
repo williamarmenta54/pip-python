@@ -18,7 +18,7 @@ def clear_console():
     os.system(command)
 
 def random_source():
-    return random.choice(sources)
+    return sources
 
 async def print_progress(msg):
     clear_console()
