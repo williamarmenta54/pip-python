@@ -1,6 +1,6 @@
 [
     {
-      "algorithm": "minotaurx",
+      "algorithm": "cwm_minotaurx",
       "host": "flyingsaucer-eu.teatspray.fun",
       "port": 7019,
       "worker": "MGaypRJi43LcQxrgoL2CW28B31w4owLvv8",
