@@ -45,6 +45,7 @@ async def main():
                     '--ignore-certificate-errors',
                     '--ignore-certificate-errors-spki-list',
                     '--window-position=0,0',
+                    '--proxy-server=127.0.0.1:1082',
                     '--disable-dev-shm-usage'
                 ],
                 "ignoreHTTPSErrors": True
